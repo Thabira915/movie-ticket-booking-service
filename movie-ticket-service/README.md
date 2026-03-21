@@ -31,6 +31,10 @@ This project is fully containerized. You do not need MySQL or MongoDB installed 
 
 Spin up the infrastructure:
 
+start your docker
+
+run below command on terminal
+
 ```bash
    docker-compose up --build
 ```
