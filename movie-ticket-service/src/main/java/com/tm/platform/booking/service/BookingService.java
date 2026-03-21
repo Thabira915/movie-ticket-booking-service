@@ -62,6 +62,11 @@ public class BookingService {
         return savedBooking;
     }
 
+    public Booking getBookingById(Long id) {
+        return bookingRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Booking not found with id: " + id));
+    }
+
     private Double calculateTotal(List<ShowSeat> seats) {
         Double total = seats.stream().mapToDouble(ShowSeat::getPrice).sum();
         log.debug("Calculated total amount: {}", total);
