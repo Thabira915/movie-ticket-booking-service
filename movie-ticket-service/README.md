@@ -33,6 +33,8 @@ Spin up the infrastructure:
 
 ```bash
    docker-compose up --build
+```
+
 Verify the build:
 The application will be available at http://localhost:9090.
 
