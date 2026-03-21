@@ -31,13 +31,13 @@ This project is fully containerized. You do not need MySQL or MongoDB installed 
 
 Spin up the infrastructure:
 
-start your docker
-
-run below command on terminal
-
-```bash
+1. **Start Docker Desktop.**
+2. **Clone and Run:**
+   ```bash
+   git clone <your-repo-url>
+   cd movie-ticket-booking-service
    docker-compose up --build
-```
+   ```
 
 Verify the build:
 The application will be available at http://localhost:9090.
