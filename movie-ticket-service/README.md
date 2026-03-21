@@ -34,7 +34,7 @@ Spin up the infrastructure:
 1. **Start Docker Desktop.**
 2. **Clone and Run:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Thabira915/movie-ticket-booking-service.git
    cd movie-ticket-booking-service
    docker-compose up --build
    ```
