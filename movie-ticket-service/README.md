@@ -43,14 +43,21 @@ Spin up the infrastructure:
 ### 🛠️ Installation & Setup
 
 1. **Start Docker Desktop.**
-2. **Clone and Run:**
+2. **Clone the repository:**
    ```bash
    git clone https://github.com/Thabira915/movie-ticket-booking-service.git
    cd movie-ticket-booking-service
-   docker-compose up --build
    ```
-Verify the build:
-The application will be available at http://localhost:9090.
+3. **Build the Application:**
+4. ```baash
+      mvn clean install -DskipTests
+   ```
+5. **Run with Docker Compose:**
+   ```Bash
+      docker-compose up --build
+   ```
+6. **Access the API:**
+   The service will be live at  ``` http://localhost:9090 ```
 
 # API Documentation
 Once the application is running, access the interactive Swagger UI to test the endpoints:
