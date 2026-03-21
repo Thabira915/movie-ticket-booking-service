@@ -49,14 +49,16 @@ Spin up the infrastructure:
    cd movie-ticket-booking-service
    ```
 3. **Build the Application:**
-4. ```baash
-      mvn clean install -DskipTests
+  
+   ```baash
+   mvn clean install -DskipTests
    ```
-5. **Run with Docker Compose:**
+4. **Run with Docker Compose:**
+   
    ```Bash
-      docker-compose up --build
+   docker-compose up --build
    ```
-6. **Access the API:**
+5. **Access the API:**
    The service will be live at  ``` http://localhost:9090 ```
 
 # API Documentation
