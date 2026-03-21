@@ -26,10 +26,21 @@ DevOps: Docker, Docker Compose
 
 Documentation: Swagger UI / OpenAPI 3.0
 
+### 🧪 Testing Strategy
+The system includes a comprehensive test suite focusing on business logic and repository mocking:
+* **Unit Testing:** Implemented using **JUnit 5** and **Mockito**.
+* **Coverage:** Includes Success Paths (Golden Path), Failure Paths (Resource Not Found), and Pagination/Bulk logic.
+* **Run Tests:**
+  ```bash
+  mvn test
+  ```
+
 # Getting Started (Run in 2 Minutes)
 This project is fully containerized. You do not need MySQL or MongoDB installed locally.
 
 Spin up the infrastructure:
+
+### 🛠️ Installation & Setup
 
 1. **Start Docker Desktop.**
 2. **Clone and Run:**
@@ -38,7 +49,6 @@ Spin up the infrastructure:
    cd movie-ticket-booking-service
    docker-compose up --build
    ```
-
 Verify the build:
 The application will be available at http://localhost:9090.
 
