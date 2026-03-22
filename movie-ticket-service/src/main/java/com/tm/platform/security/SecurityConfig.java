@@ -22,23 +22,19 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                // 1. Disable CSRF for Stateless APIs
                 .csrf(csrf -> csrf.disable())
-
-                // 2. Set Session Management to Stateless
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-
-                // 3. Configure URL Authorization
                 .authorizeHttpRequests(auth -> auth
+                        // Match your login/register path
                         .requestMatchers("/api/v1/user/register", "/api/v1/user/login").permitAll()
-                        .requestMatchers("/api/v1/payments/**").permitAll() // ADD THIS LINE
-                        .requestMatchers("/swagger-ui/**", "/v2/api-docs/**", "/v3/api-docs/**", "/swagger-resources/**").permitAll()
+                        // Allow anyone to see the movie list (Read Scenario)
+                        .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/v1/movies/**").permitAll()
+                        .requestMatchers("/api/v1/payments/**").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         .anyRequest().authenticated()
                 );
 
-        // 4. Add JWT Filter before the standard Username/Password filter
         httpSecurity.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-
         return httpSecurity.build();
     }
 
