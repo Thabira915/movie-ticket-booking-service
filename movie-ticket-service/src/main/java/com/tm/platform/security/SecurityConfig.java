@@ -25,13 +25,9 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        // Match your login/register path
-                        .requestMatchers("/api/v1/user/register", "/api/v1/user/login").permitAll()
-                        // Allow anyone to see the movie list (Read Scenario)
-                        .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/v1/movies/**").permitAll()
-                        .requestMatchers("/api/v1/payments/**").permitAll()
-                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/api/v1/**").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/actuator/**").permitAll()
+                        .anyRequest().permitAll()
                 );
 
         httpSecurity.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
