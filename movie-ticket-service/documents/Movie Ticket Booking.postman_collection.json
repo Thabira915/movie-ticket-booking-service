@@ -1,0 +1,525 @@
+{
+  "info": {
+    "_postman_id": "58efd8af-7712-42b1-8b44-41f1afe6dc54",
+    "name": "Movie Ticket Booking",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52260254",
+    "_collection_link": "https://go.postman.co/collection/52260254-58efd8af-7712-42b1-8b44-41f1afe6dc54?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Movies",
+      "item": [
+        {
+          "name": "Get All Movies",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dune: Part Two\",\r\n  \"description\": \"Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.\",\r\n  \"genre\": \"Sci-Fi\",\r\n  \"language\": \"English\",\r\n  \"durationInMinutes\": 166,\r\n  \"rating\": 8.6,\r\n  \"cast\": [\"Timothée Chalamet\", \"Zendaya\", \"Rebecca Ferguson\"],\r\n  \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Kochi\"]\r\n}"
+            },
+            "url": {
+              "raw": "localhost:9090/api/v1/movies",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "v1",
+                "movies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Movies By Genre",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dune: Part Two\",\r\n  \"description\": \"Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.\",\r\n  \"genre\": \"Sci-Fi\",\r\n  \"language\": \"English\",\r\n  \"durationInMinutes\": 166,\r\n  \"rating\": 8.6,\r\n  \"cast\": [\"Timothée Chalamet\", \"Zendaya\", \"Rebecca Ferguson\"],\r\n  \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Kochi\"]\r\n}"
+            },
+            "url": {
+              "raw": "localhost:8080/api/v1/movies/genre?genre=Action",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "movies",
+                "genre"
+              ],
+              "query": [
+                {
+                  "key": "genre",
+                  "value": "Action"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Movies In Bulk",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  {\r\n    \"title\": \"The Dark Knight\",\r\n    \"description\": \"Batman faces his greatest psychological test against the Joker.\",\r\n    \"genre\": \"Action\",\r\n    \"language\": \"English\",\r\n    \"durationInMinutes\": 152,\r\n    \"rating\": 9.0,\r\n    \"cast\": [\"Christian Bale\", \"Heath Ledger\", \"Gary Oldman\"],\r\n    \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Hyderabad\"]\r\n  },\r\n  {\r\n    \"title\": \"Interstellar\",\r\n    \"description\": \"Explorers travel through a wormhole to find a new home for humanity.\",\r\n    \"genre\": \"Sci-Fi\",\r\n    \"language\": \"English\",\r\n    \"durationInMinutes\": 169,\r\n    \"rating\": 8.7,\r\n    \"cast\": [\"Matthew McConaughey\", \"Anne Hathaway\"],\r\n    \"activeCities\": [\"Bengaluru\", \"Delhi\", \"Pune\"]\r\n  },\r\n  {\r\n    \"title\": \"RRR\",\r\n    \"description\": \"Two revolutionaries fight for their country in the 1920s.\",\r\n    \"genre\": \"Action\",\r\n    \"language\": \"Telugu\",\r\n    \"durationInMinutes\": 187,\r\n    \"rating\": 7.8,\r\n    \"cast\": [\"N.T. Rama Rao Jr.\", \"Ram Charan\", \"Alia Bhatt\"],\r\n    \"activeCities\": [\"Hyderabad\", \"Bengaluru\", \"Chennai\"]\r\n  },\r\n  {\r\n    \"title\": \"Parasite\",\r\n    \"description\": \"A poor family schemes to become employed by a wealthy family.\",\r\n    \"genre\": \"Thriller\",\r\n    \"language\": \"Korean\",\r\n    \"durationInMinutes\": 132,\r\n    \"rating\": 8.5,\r\n    \"cast\": [\"Song Kang-ho\", \"Lee Sun-kyun\"],\r\n    \"activeCities\": [\"Mumbai\", \"Bengaluru\", \"Delhi\"]\r\n  },\r\n  {\r\n    \"title\": \"Dune: Part Two\",\r\n    \"description\": \"Paul Atreides unites with the Fremen to seek revenge.\",\r\n    \"genre\": \"Sci-Fi\",\r\n    \"language\": \"English\",\r\n    \"durationInMinutes\": 166,\r\n    \"rating\": 8.6,\r\n    \"cast\": [\"Timothée Chalamet\", \"Zendaya\"],\r\n    \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Kochi\"]\r\n  },\r\n  {\r\n    \"title\": \"Drishyam 2\",\r\n    \"description\": \"A gripping tale of an investigation and a family's attempt to protect themselves.\",\r\n    \"genre\": \"Mystery\",\r\n    \"language\": \"Hindi\",\r\n    \"durationInMinutes\": 140,\r\n    \"rating\": 8.2,\r\n    \"cast\": [\"Ajay Devgn\", \"Tabu\", \"Shriya Saran\"],\r\n    \"activeCities\": [\"Mumbai\", \"Delhi\", \"Ahmedabad\"]\r\n  },\r\n  {\r\n    \"title\": \"Kantara\",\r\n    \"description\": \"A conflict between humanity and nature in a mystical forest.\",\r\n    \"genre\": \"Drama\",\r\n    \"language\": \"Kannada\",\r\n    \"durationInMinutes\": 148,\r\n    \"rating\": 8.3,\r\n    \"cast\": [\"Rishab Shetty\", \"Sapthami Gowda\"],\r\n    \"activeCities\": [\"Bengaluru\", \"Mangaluru\", \"Hubli\"]\r\n  },\r\n  {\r\n    \"title\": \"The Godfather\",\r\n    \"description\": \"The aging patriarch of an organized crime dynasty transfers control to his son.\",\r\n    \"genre\": \"Crime\",\r\n    \"language\": \"English\",\r\n    \"durationInMinutes\": 175,\r\n    \"rating\": 9.2,\r\n    \"cast\": [\"Marlon Brando\", \"Al Pacino\"],\r\n    \"activeCities\": [\"Mumbai\", \"Bengaluru\", \"Kolkata\"]\r\n  },\r\n  {\r\n    \"title\": \"Spirited Away\",\r\n    \"description\": \"A young girl wanders into a world ruled by gods, witches, and spirits.\",\r\n    \"genre\": \"Animation\",\r\n    \"language\": \"Japanese\",\r\n    \"durationInMinutes\": 125,\r\n    \"rating\": 8.6,\r\n    \"cast\": [\"Rumi Hiiragi\", \"Miyu Irino\"],\r\n    \"activeCities\": [\"Bengaluru\", \"Pune\", \"Mumbai\"]\r\n  },\r\n  {\r\n    \"title\": \"Jailer\",\r\n    \"description\": \"A retired jailer goes on a manhunt to find his son's killers.\",\r\n    \"genre\": \"Action\",\r\n    \"language\": \"Tamil\",\r\n    \"durationInMinutes\": 168,\r\n    \"rating\": 7.1,\r\n    \"cast\": [\"Rajinikanth\", \"Vinayakan\", \"Ramya Krishnan\"],\r\n    \"activeCities\": [\"Chennai\", \"Bengaluru\", \"Coimbatore\"]\r\n  },\r\n  {\r\n    \"title\": \"The Dark Knight\",\r\n    \"description\": \"Batman faces his greatest psychological test against the Joker.\",\r\n    \"genre\": \"Action\",\r\n    \"language\": \"English\",\r\n    \"durationInMinutes\": 152,\r\n    \"rating\": 9.0,\r\n    \"cast\": [\"Christian Bale\", \"Heath Ledger\", \"Gary Oldman\"],\r\n    \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Hyderabad\"]\r\n  },\r\n  {\r\n    \"title\": \"Interstellar\",\r\n    \"description\": \"Explorers travel through a wormhole to find a new home for humanity.\",\r\n    \"genre\": \"Sci-Fi\",\r\n    \"language\": \"English\",\r\n    \"durationInMinutes\": 169,\r\n    \"rating\": 8.7,\r\n    \"cast\": [\"Matthew McConaughey\", \"Anne Hathaway\"],\r\n    \"activeCities\": [\"Bengaluru\", \"Delhi\", \"Pune\"]\r\n  },\r\n  {\r\n    \"title\": \"RRR\",\r\n    \"description\": \"Two revolutionaries fight for their country in the 1920s.\",\r\n    \"genre\": \"Action\",\r\n    \"language\": \"Telugu\",\r\n    \"durationInMinutes\": 187,\r\n    \"rating\": 7.8,\r\n    \"cast\": [\"N.T. Rama Rao Jr.\", \"Ram Charan\", \"Alia Bhatt\"],\r\n    \"activeCities\": [\"Hyderabad\", \"Bengaluru\", \"Chennai\"]\r\n  },\r\n  {\r\n    \"title\": \"Parasite\",\r\n    \"description\": \"A poor family schemes to become employed by a wealthy family.\",\r\n    \"genre\": \"Thriller\",\r\n    \"language\": \"Korean\",\r\n    \"durationInMinutes\": 132,\r\n    \"rating\": 8.5,\r\n    \"cast\": [\"Song Kang-ho\", \"Lee Sun-kyun\"],\r\n    \"activeCities\": [\"Mumbai\", \"Bengaluru\", \"Delhi\"]\r\n  },\r\n  {\r\n    \"title\": \"Dune: Part Two\",\r\n    \"description\": \"Paul Atreides unites with the Fremen to seek revenge.\",\r\n    \"genre\": \"Sci-Fi\",\r\n    \"language\": \"English\",\r\n    \"durationInMinutes\": 166,\r\n    \"rating\": 8.6,\r\n    \"cast\": [\"Timothée Chalamet\", \"Zendaya\"],\r\n    \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Kochi\"]\r\n  },\r\n  {\r\n    \"title\": \"Drishyam 2\",\r\n    \"description\": \"A gripping tale of an investigation and a family's attempt to protect themselves.\",\r\n    \"genre\": \"Mystery\",\r\n    \"language\": \"Hindi\",\r\n    \"durationInMinutes\": 140,\r\n    \"rating\": 8.2,\r\n    \"cast\": [\"Ajay Devgn\", \"Tabu\", \"Shriya Saran\"],\r\n    \"activeCities\": [\"Mumbai\", \"Delhi\", \"Ahmedabad\"]\r\n  },\r\n  {\r\n    \"title\": \"Kantara\",\r\n    \"description\": \"A conflict between humanity and nature in a mystical forest.\",\r\n    \"genre\": \"Drama\",\r\n    \"language\": \"Kannada\",\r\n    \"durationInMinutes\": 148,\r\n    \"rating\": 8.3,\r\n    \"cast\": [\"Rishab Shetty\", \"Sapthami Gowda\"],\r\n    \"activeCities\": [\"Bengaluru\", \"Mangaluru\", \"Hubli\"]\r\n  },\r\n  {\r\n    \"title\": \"The Godfather\",\r\n    \"description\": \"The aging patriarch of an organized crime dynasty transfers control to his son.\",\r\n    \"genre\": \"Crime\",\r\n    \"language\": \"English\",\r\n    \"durationInMinutes\": 175,\r\n    \"rating\": 9.2,\r\n    \"cast\": [\"Marlon Brando\", \"Al Pacino\"],\r\n    \"activeCities\": [\"Mumbai\", \"Bengaluru\", \"Kolkata\"]\r\n  },\r\n  {\r\n    \"title\": \"Spirited Away\",\r\n    \"description\": \"A young girl wanders into a world ruled by gods, witches, and spirits.\",\r\n    \"genre\": \"Animation\",\r\n    \"language\": \"Japanese\",\r\n    \"durationInMinutes\": 125,\r\n    \"rating\": 8.6,\r\n    \"cast\": [\"Rumi Hiiragi\", \"Miyu Irino\"],\r\n    \"activeCities\": [\"Bengaluru\", \"Pune\", \"Mumbai\"]\r\n  },\r\n  {\r\n    \"title\": \"Jailer\",\r\n    \"description\": \"A retired jailer goes on a manhunt to find his son's killers.\",\r\n    \"genre\": \"Action\",\r\n    \"language\": \"Tamil\",\r\n    \"durationInMinutes\": 168,\r\n    \"rating\": 7.1,\r\n    \"cast\": [\"Rajinikanth\", \"Vinayakan\", \"Ramya Krishnan\"],\r\n    \"activeCities\": [\"Chennai\", \"Bengaluru\", \"Coimbatore\"]\r\n  }\r\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9090/api/v1/movies/bulk",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "v1",
+                "movies",
+                "bulk"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Movie By Title",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dune: Part Two\",\r\n  \"description\": \"Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.\",\r\n  \"genre\": \"Sci-Fi\",\r\n  \"language\": \"English\",\r\n  \"durationInMinutes\": 166,\r\n  \"rating\": 8.6,\r\n  \"cast\": [\"Timothée Chalamet\", \"Zendaya\", \"Rebecca Ferguson\"],\r\n  \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Kochi\"]\r\n}"
+            },
+            "url": {
+              "raw": "localhost:8080/api/v1/movies/search?title=Inception",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "movies",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": "Inception"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Movie",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dil to pagal hai\",\r\n  \"description\": \"Romance\",\r\n  \"genre\": \"Romance\",\r\n  \"language\": \"English\",\r\n  \"durationInMinutes\": 166,\r\n  \"rating\": 8.6,\r\n  \"cast\": [\"Timothée Chalamet\", \"Zendaya\", \"Rebecca Ferguson\"],\r\n  \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Kochi\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/v1/movies",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "movies"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Theaters",
+      "item": [
+        {
+          "name": "Get All Theaters",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dune: Part Two\",\r\n  \"description\": \"Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.\",\r\n  \"genre\": \"Sci-Fi\",\r\n  \"language\": \"English\",\r\n  \"durationInMinutes\": 166,\r\n  \"rating\": 8.6,\r\n  \"cast\": [\"Timothée Chalamet\", \"Zendaya\", \"Rebecca Ferguson\"],\r\n  \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Kochi\"]\r\n}"
+            },
+            "url": {
+              "raw": "localhost:9090/api/v1/theaters",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "v1",
+                "theaters"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Theaters By City Name",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dune: Part Two\",\r\n  \"description\": \"Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.\",\r\n  \"genre\": \"Sci-Fi\",\r\n  \"language\": \"English\",\r\n  \"durationInMinutes\": 166,\r\n  \"rating\": 8.6,\r\n  \"cast\": [\"Timothée Chalamet\", \"Zendaya\", \"Rebecca Ferguson\"],\r\n  \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Kochi\"]\r\n}"
+            },
+            "url": {
+              "raw": "localhost:8080/api/v1/theaters/search?city=pune",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "theaters",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "city",
+                  "value": "pune"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Theaters By ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dune: Part Two\",\r\n  \"description\": \"Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.\",\r\n  \"genre\": \"Sci-Fi\",\r\n  \"language\": \"English\",\r\n  \"durationInMinutes\": 166,\r\n  \"rating\": 8.6,\r\n  \"cast\": [\"Timothée Chalamet\", \"Zendaya\", \"Rebecca Ferguson\"],\r\n  \"activeCities\": [\"Bengaluru\", \"Mumbai\", \"Kochi\"]\r\n}"
+            },
+            "url": {
+              "raw": "localhost:8080/api/v1/theaters/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "theaters",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Theater",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"PVR Cinemas\",\r\n  \"city\": \"Pune\",\r\n  \"address\": \"Phoenix Marketcity, Viman Nagar\",\r\n  \"screens\": [\r\n    {\r\n      \"screenName\": \"Screen 1\",\r\n      \"totalSeats\": 150\r\n    },\r\n    {\r\n      \"screenName\": \"Screen 2\",\r\n      \"totalSeats\": 120\r\n    },\r\n    {\r\n      \"screenName\": \"IMAX\",\r\n      \"totalSeats\": 250\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/v1/theaters",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "theaters"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Theaters In Bulk",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  {\r\n    \"name\": \"PVR Director's Cut\",\r\n    \"city\": \"Delhi\",\r\n    \"address\": \"Ambience Mall, Vasant Kunj\",\r\n    \"screens\": [\r\n      {\r\n        \"screenName\": \"Gold Class 1\",\r\n        \"totalSeats\": 40\r\n      },\r\n      {\r\n        \"screenName\": \"Gold Class 2\",\r\n        \"totalSeats\": 40\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"name\": \"Inox Insignia\",\r\n    \"city\": \"Mumbai\",\r\n    \"address\": \"Nariman Point\",\r\n    \"screens\": [\r\n      {\r\n        \"screenName\": \"Insignia 1\",\r\n        \"totalSeats\": 32\r\n      },\r\n      {\r\n        \"screenName\": \"Insignia 2\",\r\n        \"totalSeats\": 32\r\n      },\r\n      {\r\n        \"screenName\": \"Screen 3\",\r\n        \"totalSeats\": 200\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"name\": \"Cinepolis\",\r\n    \"city\": \"Pune\",\r\n    \"address\": \"Westend Mall, Aundh\",\r\n    \"screens\": [\r\n      {\r\n        \"screenName\": \"Macro XE\",\r\n        \"totalSeats\": 300\r\n      }\r\n    ]\r\n  }\r\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9090/api/v1/theaters/bulk",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "v1",
+                "theaters",
+                "bulk"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Shows",
+      "item": [
+        {
+          "name": "Create A Show",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"movieId\": \"69bfb95dd01f2bbc86fb4a4b\", \r\n    \"screenId\": 1,\r\n    \"startTime\": \"2026-04-05T18:00:00\",\r\n    \"price\": 250.0,\r\n    \"totalSeats\": 50\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9090/api/v1/shows",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "v1",
+                "shows"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Booking",
+      "item": [
+        {
+          "name": "Create Booking",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\": \"User_8811\",\r\n    \"showId\": 2,\r\n    \"seatIds\": [10, 11],\r\n    \"paymentMethod\": \"UPI\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9090/api/v1/book",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "v1",
+                "book"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "Process Payment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"bookingId\": 1,\r\n    \"amount\": 500.0,\r\n    \"transactionId\": \"TXN_9988776655\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9090/api/v1/payments/process",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "v1",
+                "payments",
+                "process"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Create User / Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Thabira Meher\",\r\n    \"email\": \"thabira.meehr@example.com\",\r\n    \"password\": \"SecurePassword198\",\r\n    \"role\": \"ADMIN\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/v1/user/register",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find User",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Thabira Meher\",\r\n    \"email\": \"thabira.meehr@example.com\",\r\n    \"password\": \"SecurePassword198\",\r\n    \"role\": \"ADMIN\"\r\n}"
+            },
+            "url": {
+              "raw": "localhost:8080/api/v1/user/search?email=thabira.meehr@example.com",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "thabira.meehr@example.com"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"thabira.meehr@example.com\",\r\n    \"password\": \"SecurePassword198\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9090/api/v1/user/login",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
