@@ -31,10 +31,25 @@ This project is fully containerized. You do not need MySQL or MongoDB installed 
 
 Spin up the infrastructure:
 
-Bash
-docker-compose up --build
-Verify the build:
-The application will be available at http://localhost:9090.
+### 🛠️ Installation & Setup
+
+1. **Start Docker Desktop.**
+2. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Thabira915/movie-ticket-booking-service.git
+   cd movie-ticket-booking-service
+   ```
+3. **Build the Application:**
+   ```baash
+   mvn clean install -DskipTests
+   ```
+4. **Run with Docker Compose:**
+   
+   ```Bash
+   docker-compose up --build
+   ```
+6. **Access the API:**
+   The service will be live at  ``` http://localhost:9090 ```
 
 # API Documentation
 Once the application is running, access the interactive Swagger UI to test the endpoints:
