@@ -46,7 +46,7 @@ Spin up the infrastructure:
 4. **Run with Docker Compose:**
    
    ```Bash
-      docker-compose up --build
+   docker-compose up --build
    ```
 6. **Access the API:**
    The service will be live at  ``` http://localhost:9090 ```
